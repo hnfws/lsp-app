@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22092C"
+    android:orientation="vertical"
+    tools:context=".edit">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/white"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="tambah siswa"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20dp"
+            android:background="#BE3144"
+            android:paddingLeft="130dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp"
+
+            android:src="@drawable/students"/>
+
+    </androidx.cardview.widget.CardView>
+    <EditText
+        android:id="@+id/nama"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg"
+        android:backgroundTint="@color/white"
+        android:layout_margin="20dp"
+        android:hint="masukan nama siswa"
+        android:inputType="text"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/kelas"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/bg"
+        android:backgroundTint="@color/white"
+        android:textColorHint="@color/black"
+        android:hint="masukan kelas"
+        android:textColor="@color/black"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/jenkel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:textColorHint="@color/black"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg"
+        android:backgroundTint="@color/white"
+        android:hint="masukan jenis kelamin (P/L)"
+        android:inputType="text"/>
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/edit"
+        android:backgroundTint="#BE3144"
+        android:textColor="@color/white"
+        android:text="tambah"
+        android:layout_margin="20dp"/>
+
+</LinearLayout>

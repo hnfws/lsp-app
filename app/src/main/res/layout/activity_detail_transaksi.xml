@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#22092C"
+    tools:context=".detail_transaksi">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_vertical"
+        android:backgroundTint="#BE3144"
+        app:cardCornerRadius="30dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="nama siswa:"/>
+            <TextView
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/nama_siswa"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="nama"/>
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="kelas operator:"/>
+            <TextView
+                android:id="@+id/nama_operator"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="60dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="kelas"/>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="nama kegiatan"/>
+            <TextView
+                android:id="@+id/nama_kegiatan"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="100dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="jenkel"/>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="140dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="harga:"/>
+
+            <TextView
+                android:id="@+id/harga"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="140dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="jenkel"/>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="180dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="uang bayar :"/>
+            <TextView
+                android:id="@+id/uang_bayar"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="180dp"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="jenkel"/>
+
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="220dp"
+
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:text="kembalian:"/>
+
+            <TextView
+                android:id="@+id/kembalian"
+                android:layout_marginLeft="200dp"
+                android:layout_marginTop="220dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:hint="jenkel"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

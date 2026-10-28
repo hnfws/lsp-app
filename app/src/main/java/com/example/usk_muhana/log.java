@@ -1,0 +1,93 @@
+package com.example.usk_muhana;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class log extends AppCompatActivity {
+
+    String[] daftar;
+    Menu menu;
+    protected Cursor cursor;
+    Database database;
+    public static log log;
+    ListView list;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.log);
+        list = findViewById(R.id.list);
+
+        log = this;
+        database = new Database(this);
+        RefreshList2();
+    }
+
+
+    public void RefreshList2() {
+        SQLiteDatabase db = database.getReadableDatabase();
+        cursor = db.rawQuery("SELECT*FROM logging", null);
+        daftar = new String[cursor.getCount()];
+        cursor.moveToFirst();
+        for (int i = 0; i < cursor.getCount(); i++) {
+            cursor.moveToPosition(i);
+            daftar[i] = cursor.getString(0).toString();
+
+        }
+        list.setAdapter(new ArrayAdapter(this, android.R.layout.simple_list_item_1, daftar));
+        list.setSelected(true);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView arg0, View arg1, int arg2, long arg3) {
+                final String selection = daftar[arg2];
+                final CharSequence[] dialogitem = {"lihat siswa", "update siswa", "hapus siswa"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(log.this);
+                builder.setTitle("pilihan");
+                builder.setItems(dialogitem, new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int item) {
+                        switch (item){
+                            case 0:
+                                Intent i = new Intent(getApplicationContext(), detail.class);
+                                i.putExtra("nama", selection);
+                                startActivity(i);
+                                break;
+                            case 1:
+                                Intent in = new Intent(getApplicationContext(), edit.class);
+                                in.putExtra("nama", selection);
+                                startActivity(in);
+                                break;
+                            case 2:
+                                SQLiteDatabase db = database.getWritableDatabase();
+                                db.execSQL("delete from siswa where nama='"+ selection +"'");
+                                RefreshList2();
+                                break;
+                        }
+
+                    }
+                });
+                builder.create().show();
+
+            }
+        });
+        ((ArrayAdapter) list.getAdapter()).notifyDataSetInvalidated();
+
+
+    }
+}
+
